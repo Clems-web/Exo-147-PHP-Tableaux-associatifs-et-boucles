@@ -39,7 +39,22 @@ $videotheque = array(
 
 echo '12.Mes films : <br>';
 //ajoutez votre code ici
-
+foreach($videotheque as $film) {
+    foreach ($film as $x => $y) {
+        if (is_array($y)) {
+            $count = count($y);
+            echo $x . " : ";
+            for ($zero = 0; $zero < $count; $zero++) {
+                echo $y[$zero] . ", ";
+            }
+            echo "<br>";
+        }
+        else {
+            echo $x . " : ". $y."<br>";
+        }
+    }
+    echo "<br>";
+}
 
 //----------------------------------------
 //Afficher toutes les informations de la vidéothèque
